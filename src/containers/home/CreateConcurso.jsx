@@ -75,14 +75,15 @@ class Createconcurso extends React.Component{
         e.preventDefault();
 
         const data = {
-            administrador_id: this.state.administrador_id,
-            nombreconcurso: this.state.nombreconcurso, 
+            admin_id: this.state.administrador_id,
+            nombreConcurso: this.state.nombreconcurso, 
             url: this.state.url,
-            valor: this.state.valor,
+            urlBanner: "",
+            precio: this.state.valor,
             guion: this.state.guion,
             recomendaciones: this.state.recomendaciones,
-            fechainicio: this.state.fechainicio,
-            fechafin: this.state.fechafin,
+            fechaInicio: this.state.fechainicio,
+            fechaFinal: this.state.fechafin,
             fechacreacion: this.state. fechacreacion
         };
 
@@ -117,12 +118,8 @@ class Createconcurso extends React.Component{
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label" for="val-email"><b>URL</b> <span
-                                                                    class="text-danger">*</span>
-                                                            </label>
-                                                            <div class="col-lg-6">
-                                                                <input type="text" class="form-control" id="val-email" name="url" onChange={this.onUrlChange} placeholder="ingresa url de tu concurso.." />
-                                                            </div>
+
+
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-lg-4 col-form-label" for="val-password"><b>valor</b>

@@ -8,7 +8,7 @@ class Inscripcion extends React.Component{
             nombre: "",
             apellido: "", 
             email: "", 
-            password: ""
+            clave: ""
         }
     }
 
@@ -21,7 +21,7 @@ class Inscripcion extends React.Component{
             nombre: this.state.nombre,
             apellido: this.state.apellido,
             email: this.state.email, 
-            password: this.state.password
+            clave: this.state.clave
         }
 
         api.post("/api/registrarAdmin",data)
@@ -50,7 +50,7 @@ class Inscripcion extends React.Component{
 
     passwordChange = e => {
         this.setState({
-            password: e.target.value
+            clave: e.target.value
         })
     }
 

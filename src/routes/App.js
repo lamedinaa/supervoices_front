@@ -9,7 +9,10 @@ import Login from '../containers/front/login';
 import CreateConcurso from '../containers/home/CreateConcurso';
 import useToken from '../containers/home/useToken';
 import Noauth401 from '../containers/front/Noauth401';
-
+import Verconcurso from '../containers/home/verconcurso';
+import Layoutconcurso from '../containers/layout_concurso/layoutconcurso';
+import Landingpageconcurso from '../containers/concurso/landingpageconcurso';
+import InscripcionConcurso from '../containers/concurso/inscripcionconcurso';
 
 function App(){
 
@@ -20,9 +23,16 @@ function App(){
 
         <Routes>
             <Route path="/" element={<Layoutfront />}>
-                <Route index element={<Landingpage />}></Route>
+               < Route index element={<Landingpage />}></Route>
                 <Route path="inscripcion" element={<Inscripcion />}></Route>
                 <Route path="login" element={<Login setToken={setToken} />}></Route>
+            </Route>
+        </Routes>
+
+        <Routes>
+            <Route path=":nombreconcurso/:idconcurso" element={<Layoutconcurso />} >
+                < Route index element={<Landingpageconcurso />}></Route>
+                < Route path="inscripcion/" element={<InscripcionConcurso />}></Route>
             </Route>
         </Routes>
         
@@ -34,7 +44,8 @@ function App(){
           <Routes>
             <Route path="/home" element={<Layouthome removeToken={removeToken} />}>
                 <Route index element={<Dashboard token={token} setToken={setToken} />}></Route>
-                <Route exact path="createconcurso" element={<CreateConcurso token={token} setToken={setToken} />}></Route>     
+                <Route exact path="createconcurso" element={<CreateConcurso token={token} setToken={setToken} />}></Route>
+                <Route exact path="verconcurso/:idconcurso" element={<Verconcurso token={token} setToken={setToken} />}></Route>     
             </Route>
         </Routes> 
         }

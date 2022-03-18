@@ -1,7 +1,7 @@
 import React from 'react';
 import {Table} from 'react-bootstrap'
 import api from '../../api';
-
+import {Link} from 'react-router-dom';
 
 class home extends React.Component{
 
@@ -74,7 +74,13 @@ class home extends React.Component{
                                     <td>{concurso.guion}</td>
                                     <td>{concurso.fechainicio}</td>
                                     <td>{concurso.fechafin}</td>
-                                    <td></td>
+                                    
+                                    <td>
+                                      <Link to={"/home/verconcurso/"+concurso.id}> <button type="button" class="btn btn-primary">Ver</button> </Link>
+
+                                      <Link to={"/home/eliminarconcurso/"+concurso.id}><button type="button" class="btn btn-warning">Eliminar</button></Link>
+                                      
+                                    </td>
                                   </tr> 
                                 )
                              })    

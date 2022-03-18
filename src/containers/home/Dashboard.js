@@ -54,8 +54,7 @@ class home extends React.Component{
                             <tr>
                               <th>#</th>
                               <th>NOMBRE</th>
-                              <th>VALOR</th>
-                              <th>GUION</th>
+                              <th>URL</th>
                               <th>FECHA INICIO</th>
                               <th>FECHA FIN</th>
                               <th>ACCIONES</th>
@@ -70,8 +69,9 @@ class home extends React.Component{
                                   <tr key={concurso.id}>
                                     <td>{concurso.id}</td>
                                     <td>{concurso.nombre}</td>
-                                    <td>{concurso.valor}</td>
-                                    <td>{concurso.guion}</td>
+                                    <td>
+                                      <Link to={"/"+concurso.urlbanner}> {concurso.url} </Link>
+                                    </td>
                                     <td>{concurso.fechainicio}</td>
                                     <td>{concurso.fechafin}</td>
                                     

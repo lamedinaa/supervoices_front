@@ -14,6 +14,7 @@ export const Verconcurso = (props) => {
 
     useEffect(() => {
         getInfoConcurso();
+        console.log(locutores,"locutores");
     },[]);
 
     const getInfoConcurso = () => {
@@ -174,7 +175,7 @@ export const Verconcurso = (props) => {
                                 <th>EMAIL</th>
                                 <th>Observaciones</th>
                                 <th>Nombre de archivo</th>
-                                <th>Tipo de archivo</th>
+                                <th>Estado de archivo</th>
                                 <th>Fecha de creación</th>
                                 <th>Descargar voz</th>
                                 </tr>
@@ -190,7 +191,7 @@ export const Verconcurso = (props) => {
                                                 <td>{locutor.email}</td>
                                                 <td>{locutor.observaciones}</td>
                                                 <td>{locutor.nombreArchivo}</td>
-                                                <td>{locutor.tipoArchivo}</td>
+                                                <td>{locutor.convertido==0?"sin convertir":"convertido mp3"}</td>
                                                 <td>{locutor.fechacreacion}</td>
                                             </tr>
                                         )

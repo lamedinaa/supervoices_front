@@ -193,6 +193,7 @@ export const Verconcurso = (props) => {
                                                 <td>{locutor.nombreArchivo}</td>
                                                 <td>{locutor.convertido==0?"sin convertir":"convertido mp3"}</td>
                                                 <td>{locutor.fechacreacion}</td>
+                                                <td>{locutor.convertido==0? "sin convertir" :"https://d3mvngqjtj76ft.cloudfront.net/mp3/"+locutor.nombreArchivo}</td>
                                             </tr>
                                         )
                                     })
